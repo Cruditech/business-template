@@ -5,14 +5,11 @@ import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 
 // You need to swap out the Auth0 client id and domain with the one from your Auth0 client.
 // In your Auth0 client, you need to also add a url to your authorized redirect urls.
-//
-// For this application, I added https://auth.expo.io/@arielweinberger/with-auth0 because I am
-// signed in as the 'arielweinberger' account on Expo and the name/slug for this app is 'with-auth0'.
-//
+
 // You can open this app in the Expo client and check your logs to find out your redirect URL.
 
 const auth0ClientId = "";
-const authorizationEndpoint = "https://arielweinberger.eu.auth0.com/authorize";
+const authorizationEndpoint = "https://cruditech.us.auth0.com/authorize";
 
 const useProxy = Platform.select({ web: false, default: true });
 const redirectUri = AuthSession.makeRedirectUri({ useProxy });
