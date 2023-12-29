@@ -1,5 +1,5 @@
 const config = {
-  clientId: "jOymDSacYWA01NSaiiYZBUrGYRC1QGBR",
+  clientId: process.env.AUTH0_CLIENT_ID,//"jOymDSacYWA01NSaiiYZBUrGYRC1QGBR",
   domain: "cruditech.us.auth0.com"
 };
 
