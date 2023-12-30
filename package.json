@@ -1,25 +1,15 @@
 {
-  "name": "business-template",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "doppler run -- expo start --dev-client",
-    "android": "doppler run -- expo run:android",
-    "ios": "doppler run -- expo run:ios",
-    "web": "doppler run -- expo start --web"
-  },
   "dependencies": {
-    "@expo/webpack-config": "^18.0.1",
-    "expo": "~48.0.18",
-    "expo-splash-screen": "~0.18.2",
-    "expo-status-bar": "~1.4.0",
+    "expo": "^49.0.3",
+    "expo-auth-session": "~5.0.2",
+    "expo-random": "~13.2.0",
+    "jwt-decode": "2.2.0",
     "react": "18.2.0",
-    "react-dom": "18.0.0",
-    "react-native": "0.71.8",
-    "react-native-auth0": "^3.0.0",
-    "react-native-web": "~0.18.7"
+    "react-dom": "18.2.0",
+    "react-native": "0.72.3",
+    "react-native-web": "~0.19.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
-  },
-  "private": true
+    "@babel/core": "^7.19.3"
+  }
 }

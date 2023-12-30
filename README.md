@@ -1,70 +1,37 @@
-# Auth0 React Native - E Samples - Login
+# Auth0 Example
 
-The complete guide to getting started with [react-native-auth0](https://github.com/auth0/react-native-auth0) is our [Expo QuickStart](https://auth0.com/docs/quickstart/native/react-native-expo/interactive).
+<p>
+  <!-- iOS -->
+  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
+  <!-- Android -->
+  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
+  <!-- Web -->
+  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
+</p>
 
-> **Warning**        
-> This SDK is not compatible with "Expo Go" app. It is compatible only with Custom Dev Client and EAS builds.
+## 🚀 How to use
 
-## 1. Install
+- Install with `yarn` or `npm install`.
+- Create your own app on [Auth0](https://auth0.com).
+- Add the `AuthSession` auth URL to `Allowed Callback URLs` on Auth0.
+- Open `App.js` and replace `auth0ClientId` and `auth0Domain` with your app settings.
+- Run `yarn start` or `npm run start` to try it out.
 
-Clone the repository and install the dependencies with [Yarn](https://yarnpkg.com):
+#### AuthSession callback URL
 
-```bash
-git clone git@github.com:auth0-samples/auth0-react-native-sample.git
-cd auth0-react-native-sample/00-login-expo
-yarn install
-```
+The AuthSession helps you with browser authentication, without the need of an additional server or website. To use this with Auth0 authentication flows, we need to tell Auth0 that the callback URLs are allowed.
 
-### Android applications only
+Each Expo user has it's own URL for different projects, the basic structure of this URL is `https://auth.expo.io/@your-username/your-expo-app-slug`. If you are signed in as `awesome-ppl`, and your app is called `meme-explorer`, your URL looks like `https://auth.expo.io/@awesome-ppl/meme-explorer`.
 
-Open the `app.json` file and locate the following plugin configuration:
+> [Read more about AuthSession here](https://docs.expo.dev/versions/latest/sdk/auth-session/)
 
-```json
-"plugins": [
-    [
-        "react-native-auth0",
-        {
-            "domain": "cruditech.us.auth0.com"
+#### Auth0 app settings
 
-        }
-    ]
-]
-```
+Both the `auth0ClientId` and `auth0Domain` needs to match your Auth0 app settings.
 
-Replace `cruditech.us.auth0.com` with your Auth0 domain value. If you have `samples.auth0.com` as your Auth0 domain you would have a configuration like the following:
+![Application Settings](https://i.imgur.com/Io9I4qg.jpg)
 
-```json
-"plugins": [
-    [
-        "react-native-auth0",
-        {
-            "domain": "samples.auth0.com"
-        }
-    ]
-]
-```
+## 📝 Notes
 
-## 2. Configure Auth0
-
-1. Copy the `app/auth0-configuration.js.example` in this sample to `app/auth0-configuration.js`.
-2. Open your [Applications in the Auth0 dashboard](https://manage.auth0.com/#/applications).
-3. Select your existing Application from the list or click **Create Application** at the top to create a new Application of type **Native**.
-4. On the **Settings** tab for the Application, copy the "Client ID" and "Domain" values and paste them into the `app/auth0-configuration.js` file created above.
-5. In the **Allowed Callback URLs** field, paste in the text below and replace `YOUR_DOMAIN` with the **Domain** from above. These URLs are required for the authentication result to be redirected from the browser to the app:
-
-```
-com.auth0samples.auth0://YOUR_DOMAIN/ios/com.auth0samples/callback,
-com.auth0samples.auth0://YOUR_DOMAIN/android/com.auth0samples/callback
-```
-
-6. Add the same values to the **Allowed Logout URLs** field as well. These are required for the browser to redirect back to the app after the user logs out.
-7. Scroll down and click **Save Changes**.
-
-## 3. Run The App
-
-Run your app on an emulator, simulator, or your own connected device.
-
-- To run the app on iOS run `expo run:ios`.
-- To run the app on Android run `expo run:android`.
-
-The first run may take a while to fully launch. Keep an eye out for confirmation windows and watch the terminal for output and results.
+- [Expo AuthSession docs](https://docs.expo.dev/versions/latest/sdk/auth-session/)
+- [Auth0 React/SPA quickstart guide](https://auth0.com/docs/quickstart/spa/react)
